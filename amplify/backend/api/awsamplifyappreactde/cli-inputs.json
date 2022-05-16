@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "awsamplifyappreactde",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/home/zach/Documents/CodingBootcamp/ReactCourse/aws-amplify-app-react/amplify/backend/api/awsamplifyappreactde/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
