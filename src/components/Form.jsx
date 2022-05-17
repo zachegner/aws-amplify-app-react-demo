@@ -60,7 +60,7 @@ const Form = () => {
         await API.graphql({ query: deleteNoteMutation, variables: { input: { id } } });
     }
 
-    return <div><Authenticator
+    return <div className='main'><Authenticator
         formFields={formFields}
         socialProviders={['amazon', 'apple', 'facebook', 'google']}
         signUpAttributes={[
@@ -88,7 +88,7 @@ const Form = () => {
                     placeholder="Note Description"
                     value={formData.description}
                 />
-                <button className='amplify-button' onClick={createNote}>Create Note</button>
+                <button className='amplify-button create' onClick={createNote}>Create Note</button>
                 <div className='notes-container' style={{ marginBottom: 30 }}>
                     {
                         notes.map(note => (
@@ -100,7 +100,7 @@ const Form = () => {
                         ))
                     }
                 </div>
-                <button className='amplify-button' onClick={signOut}>Sign out</button>
+                <button className='amplify-button sign-out' onClick={signOut}>Sign out</button>
             </div>
         )}
     </Authenticator>

@@ -1,5 +1,5 @@
 import './App.css';
-
+import { Footer } from './components/Footer';
 import Form from './components/Form';
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
   return (
   <div>
     <Form />
+    <Footer />
   </div>
   );
 }
