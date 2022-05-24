@@ -38,6 +38,7 @@ const Form = () => {
         },
     }
 
+
     useEffect(() => {
         fetchNotes();
     }, []);
@@ -74,18 +75,17 @@ const Form = () => {
         {({ signOut, user }) => (
 
             <div className="container">
-                {console.log(formFields)}
                 <Header />
                 <input
                     className='amplify-input'
                     onChange={e => setFormData({ ...formData, 'name': e.target.value })}
-                    placeholder="Note Title"
+                    placeholder="Title"
                     value={formData.name}
                 />
                 <input
                     className='amplify-input'
                     onChange={e => setFormData({ ...formData, 'description': e.target.value })}
-                    placeholder="Note Description"
+                    placeholder="Description"
                     value={formData.description}
                 />
                 <button className='amplify-button create' onClick={createNote}>Create Note</button>
