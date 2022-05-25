@@ -1,27 +1,49 @@
 .main {
-  background-color: gray;
-  margin: 0 10px;
-  border-radius: 20px;
+  background-color: antiquewhite;
+  margin: 0 auto;
+  border-radius: 10px;
   padding: 10px 0;
+  width: 60%;
+}
+
+.title {
+  font-size: 4em;
+  display: block;
 }
 
 .container {
   text-align: center;
-  width: 50%;
-  margin: 100px auto 0 auto;
+  width: 80%;
+  margin: 50px auto 25px auto;
+  background-color: burlywood;
+  padding: 2px 0 15px 0;
+  border-radius: 10px;
+
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075) !important;
 }
 
 .amplify-button {
-  background: linear-gradient(
-    to right,
-    var(--amplify-colors-blue-80),
-    var(--amplify-colors-red-60)
-  );
+  background: linear-gradient(to right,
+      var(--amplify-colors-blue-80),
+      var(--amplify-colors-red-60));
   color: white !important;
+
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075) !important;
 }
 
 .sign-out {
   background: darkslateblue !important;
+  margin-left: 20px !important;
 }
 
 .delete {
@@ -32,37 +54,66 @@
   background: darkolivegreen !important;
 }
 
-.amplify-button:hover {
-  transform: scale(1.05);
-  outline: none;
-  border: none;
+.amplify-button[data-variation='primary'] {
+  background: linear-gradient(to right,
+      var(--amplify-colors-blue-80),
+      var(--amplify-colors-red-60));
 }
 
-.amplify-button[data-variation='primary'] {
-  background: linear-gradient(
-    to right,
-    var(--amplify-colors-blue-80),
-    var(--amplify-colors-red-60)
-  );
+.amplify-input {
+  width: 80% !important;
+  margin-bottom: 10px !important;
+  background: lightgray !important;
+
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075) !important;
 }
 
 .notes-container {
-  border: 1px outset lightgray;
-  background: lightgray;
-  border-radius: 8px;
+  border: 1px outset black;
+  background: burlywood;
+  border-radius: 10px;
   padding: 5px 0;
   width: 80%;
   margin: 10px auto;
   display: flex;
   flex-wrap: wrap;
+
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
 .note {
-  border: 1px outset teal;
+  border: 1px outset gray;
   padding: 10px 5px;
-  width:200px;
+  width: 200px;
   margin: 5px auto;
   border-radius: 10px;
-  background: lightcyan;
+  background: tan;
+
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075);
+
 }
 
+.delete-icon {
+  color: maroon;
+}
+
+.delete-icon:hover {
+  color: red;
+  cursor: pointer;
+  transform: scale(1.1);
+}
