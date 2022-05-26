@@ -1,11 +1,11 @@
 import './App.css';
 import '@aws-amplify/ui-react/styles.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useState, useEffect } from 'react';
 
 import { Footer } from './components/Footer';
 import NotesList from './components/NotesList';
-import Header from './components/Header';
 import InputForm from './components/InputForm';
 
 import { Authenticator } from '@aws-amplify/ui-react';
@@ -13,6 +13,7 @@ import { API } from 'aws-amplify';
 
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
+import NavBar from './components/NavBar';
 
 
 function App() {
@@ -91,7 +92,7 @@ function App() {
     >
       {({ signOut, user }) => (
         <>
-          <Header />
+        <NavBar />
           <div className='main'>
             <div>
               <NotesList notes={notes.filter((note) => note.name.toLowerCase())} /* handleAddNote={createNote} */ handleDelete={deleteNote} />

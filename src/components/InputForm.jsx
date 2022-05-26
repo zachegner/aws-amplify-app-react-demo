@@ -8,14 +8,14 @@ const InputForm = ({ handleAddNote }) => {
     const onSubmit = (e) => {
         e.preventDefault();
         
-        if (!formData.name) {
-            alert('Please add a name')
+        if (!formData.name && !formData.description) {
+            alert('Please enter a note')
             return;
         } else if (!formData.description){
             alert('Please add a description')
             return;
-        } else if (!formData.name && !formData.description) {
-            alert('Please enter a note')
+        } else if (!formData.name) {
+            alert('Please add a title')
             return;
         }
 

@@ -4,11 +4,22 @@
   border-radius: 10px;
   padding: 10px 0;
   width: 60%;
+
 }
 
 .title {
-  font-size: 4em;
-  display: block;
+  font-size: 3.2em;
+  margin: 0 auto;
+  
+}
+
+.navbar-brand {
+  display: flex;
+}
+
+.note-icon {
+  width: 50%;
+  height: 50%;
 }
 
 .container {
@@ -18,20 +29,6 @@
   background-color: burlywood;
   padding: 2px 0 15px 0;
   border-radius: 10px;
-
-  box-shadow:
-    0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075),
-    0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075),
-    0 16px 16px hsl(0deg 0% 0% / 0.075) !important;
-}
-
-.amplify-button {
-  background: linear-gradient(to right,
-      var(--amplify-colors-blue-80),
-      var(--amplify-colors-red-60));
-  color: white !important;
 
   box-shadow:
     0 1px 1px hsl(0deg 0% 0% / 0.075),
@@ -52,6 +49,20 @@
 
 .create {
   background: darkolivegreen !important;
+}
+
+.amplify-button {
+  background: linear-gradient(to right,
+      var(--amplify-colors-blue-80),
+      var(--amplify-colors-red-60));
+  /* color: white !important; */
+
+  box-shadow:
+    0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075),
+    0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075),
+    0 16px 16px hsl(0deg 0% 0% / 0.075) !important;
 }
 
 .amplify-button[data-variation='primary'] {
@@ -92,7 +103,8 @@
 
 .note {
   padding: 10px 5px;
-  width: 200px;
+  width: max-content;
+  max-width: 300px;
   margin: 5px auto;
   border-radius: 10px;
   background: tan;
