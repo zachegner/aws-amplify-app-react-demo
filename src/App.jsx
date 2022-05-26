@@ -7,13 +7,15 @@ import { useState, useEffect } from 'react';
 import { Footer } from './components/Footer';
 import NotesList from './components/NotesList';
 import InputForm from './components/InputForm';
+import NavBar from './components/NavBar';
+import ExampleToast from './components/ExampleToast'
 
 import { Authenticator } from '@aws-amplify/ui-react';
 import { API } from 'aws-amplify';
 
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
-import NavBar from './components/NavBar';
+
 
 
 function App() {
@@ -92,7 +94,13 @@ function App() {
     >
       {({ signOut, user }) => (
         <>
-        <NavBar />
+          <NavBar />
+          <ExampleToast>
+          <a href="https://github.com/zachegner/aws-amplify-app-react-demo">Github Profile</a>
+            <span role="img" aria-label="tada">
+              🎉
+            </span>
+          </ExampleToast>
           <div className='main'>
             <div>
               <NotesList notes={notes.filter((note) => note.name.toLowerCase())} /* handleAddNote={createNote} */ handleDelete={deleteNote} />
