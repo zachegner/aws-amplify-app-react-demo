@@ -2,24 +2,29 @@ import './App.css';
 import '@aws-amplify/ui-react/styles.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import Button from 'react-bootstrap/Button';
+
 import { useState, useEffect } from 'react';
 
 import { Footer } from './components/Footer';
 import NotesList from './components/NotesList';
 import InputForm from './components/InputForm';
+import NavBar from './components/NavBar';
+import ExampleToast from './components/ExampleToast'
 
 import { Authenticator } from '@aws-amplify/ui-react';
 import { API } from 'aws-amplify';
 
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
-import NavBar from './components/NavBar';
+
 
 
 function App() {
   const [notes, setNotes] = useState([{
     name: '',
-    description: ''
+    description: '',
+    date: ''
   }]);
 
   useEffect(() => {
@@ -58,10 +63,11 @@ function App() {
   }
 
   async function createNote(formData) {
-    //if (!formData.name || !formData.description) return;
+    const date = new Date();
     const newNote = {
       name: formData.name,
-      description: formData.description
+      description: formData.description,
+      date: date.toLocaleString()
     }
     try {
       await API.graphql({ query: createNoteMutation, variables: { input: newNote } });
@@ -92,15 +98,21 @@ function App() {
     >
       {({ signOut, user }) => (
         <>
-        <NavBar />
+          <NavBar />
+          <ExampleToast>
+          <a href="https://github.com/zachegner/aws-amplify-app-react-demo">Github Profile</a>
+            <span role="img" aria-label="tada">
+              🎉
+            </span>
+          </ExampleToast>
           <div className='main'>
             <div>
-              <NotesList notes={notes.filter((note) => note.name.toLowerCase())} /* handleAddNote={createNote} */ handleDelete={deleteNote} />
+              <NotesList notes={notes.filter((note) => note.name.toLowerCase())} handleDelete={deleteNote} />
             </div>
-            <div className='container'>
+            <div>
               <InputForm handleAddNote={createNote} />
             </div>
-            <button className='amplify-button sign-out' onClick={signOut}>Sign out</button>
+            <Button className='btn btn-danger btn-lg btn-sign-out' onClick={signOut}>Sign out</Button>
           </div>
           <Footer />
         </>

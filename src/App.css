@@ -10,7 +10,7 @@
 .title {
   font-size: 3.2em;
   margin: 0 auto;
-  
+
 }
 
 .navbar-brand {
@@ -22,7 +22,7 @@
   height: 50%;
 }
 
-.container {
+.input-container {
   text-align: center;
   width: 80%;
   margin: 50px auto 25px auto;
@@ -38,17 +38,8 @@
     0 16px 16px hsl(0deg 0% 0% / 0.075) !important;
 }
 
-.sign-out {
-  background: darkslateblue !important;
-  margin-left: 20px !important;
-}
-
-.delete {
-  background: darkred !important;
-}
-
-.create {
-  background: darkolivegreen !important;
+.date {
+  color: grey;
 }
 
 .amplify-button {
@@ -103,12 +94,12 @@
 
 .note {
   padding: 10px 5px;
-  width: max-content;
+  width: max-content + 30px;
   max-width: 300px;
   margin: 5px auto;
   border-radius: 10px;
   background: tan;
-
+  position: relative;
   box-shadow:
     0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075),
@@ -118,8 +109,15 @@
 
 }
 
+.name-label {
+  padding-top: 12px;
+}
+
 .delete-icon {
   color: maroon;
+  position: absolute;
+  right: 4px;
+  top: 4px;
 }
 
 .delete-icon:hover {
@@ -127,3 +125,5 @@
   cursor: pointer;
   transform: scale(1.1);
 }
+
+.btn-sign-out {}

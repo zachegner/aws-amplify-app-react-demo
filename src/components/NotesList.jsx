@@ -7,6 +7,7 @@ const NotesList = ({ notes, handleDelete }) => {
                         <Note 
                             id={note.id} 
                             name={note.name}
+                            date={note.date}
                             description={note.description} 
                             handleDelete={handleDelete} 
                             className='note' 

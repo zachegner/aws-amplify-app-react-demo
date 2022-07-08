@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import Button from 'react-bootstrap/Button';
+
 const initialFormState = { name: '', description: '' }
 
 const InputForm = ({ handleAddNote }) => {
@@ -24,8 +26,8 @@ const InputForm = ({ handleAddNote }) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <div>
+        <div className="input-container">
+            <form onSubmit={onSubmit}>
                 <h4>Enter a note here</h4>
                 <input
                     className='amplify-input form-input'
@@ -39,9 +41,10 @@ const InputForm = ({ handleAddNote }) => {
                     placeholder="Description"
                     value={formData.description}
                 />
-            </div>
-            <button type='submit' className='amplify-button create' /* onClick={createNote} */>Create Note</button>
+            
+            <Button type='submit' className='btn btn-success'>Create Note</Button>
         </form>
+        </div>
     );
 };
 
